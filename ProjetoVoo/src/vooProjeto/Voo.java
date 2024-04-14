@@ -3,9 +3,9 @@ package vooProjeto;
 public class Voo {
 
   private int id;
-  private String dataSaida;
+  private Data dataSaida;
   private String horaSaida;
-  private String dataChegada;
+  private Data dataChegada;
   private String horaChegada;
   private String origem;
   private String destino;
@@ -15,7 +15,7 @@ public class Voo {
   private String assento;
 
   
-  public Voo(int id, String dataSaida, String horaSaida, String dataChegada, String horaChegada,
+  public Voo(int id, Data dataSaida, String horaSaida, Data dataChegada, String horaChegada,
              String origem, String destino, String companhiaAerea, String numeroVoo, String status) {
     this.id = id;
     this.dataSaida = dataSaida;
