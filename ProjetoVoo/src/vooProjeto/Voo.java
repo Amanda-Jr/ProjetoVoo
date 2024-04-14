@@ -72,4 +72,117 @@ public class Voo {
             "Número do voo: " + numeroVoo + "\n" +
             "Status: " + status + (assento != null ? "\nAssento: " + assento : "");
   }
+
+
+  public int getId() {
+		return id;
+  }
+	
+	
+  public void setId(int id) {
+		this.id = id;
+  }
+	
+	
+  public Data getDataSaida() {
+		return dataSaida;
+  }
+	
+	
+  public void setDataSaida(Data dataSaida) {
+		this.dataSaida = dataSaida;
+  }
+	
+	
+  public String getHoraSaida() {
+		return horaSaida;
+  }
+	
+	
+  public void setHoraSaida(String horaSaida) {
+		this.horaSaida = horaSaida;
+  }
+	
+	
+  public Data getDataChegada() {
+		return dataChegada;
+  }
+	
+	
+  public void setDataChegada(Data dataChegada) {
+		this.dataChegada = dataChegada;
+  }
+	
+	
+  public String getHoraChegada() {
+		return horaChegada;
+  }
+	
+	
+  public void setHoraChegada(String horaChegada) {
+		this.horaChegada = horaChegada;
+  }
+	
+	
+  public String getOrigem() {
+		return origem;
+  }
+	
+	
+  public void setOrigem(String origem) {
+		this.origem = origem;
+  }
+	
+	
+  public String getDestino() {
+		return destino;
+  }
+	
+	
+  public void setDestino(String destino) {
+		this.destino = destino;
+  }
+	
+	
+  public String getCompanhiaAerea() {
+		return companhiaAerea;
+  }
+	
+	
+  public void setCompanhiaAerea(String companhiaAerea) {
+		this.companhiaAerea = companhiaAerea;
+  }
+	
+	
+  public String getNumeroVoo() {
+		return numeroVoo;
+  }
+	
+	
+  public void setNumeroVoo(String numeroVoo) {
+		this.numeroVoo = numeroVoo;
+  }
+	
+	
+  public String getStatus() {
+		return status;
+  }
+	
+	
+  public void setStatus(String status) {
+		this.status = status;
+  }
+	
+	
+  public String getAssento() {
+		return assento;
+  }
+	
+	
+  public void setAssento(String assento) {
+		this.assento = assento;
+  }
+	  
+  
+  
 }
