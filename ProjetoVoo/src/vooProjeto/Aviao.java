@@ -12,11 +12,10 @@ public class Aviao {
 	public Aviao() {
 		this.assentos = new boolean[6][6];
 		
-		
 	}
 	
-	public boolean disponivel() {
-		String assentoPassageiro[] = voo.getAssento().split("");
+	public boolean disponivel(String assento) {
+		String assentoPassageiro[] = assento.split("");
 		if(assentos[Integer.parseInt(assentoPassageiro[0])][Integer.parseInt(assentoPassageiro[1])] ) {
 			return true;
 		}
