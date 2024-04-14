@@ -39,18 +39,22 @@ public class Voo {
 			if (aviao.disponivel(assento)) {
 				this.assento = assento;
 				System.out.println("Assento reservado com sucesso! Valor: R$" + valorAssento);
-			} else {
-				System.out.println("Assento indisponível para reserva.");			}
-		} else {
-			System.out.println("Atenção: Assento já reservado para este voo.");
+			} 
+			else {
+				System.out.println("Assento indisponível para reserva.");			
 			}
+		} 
+		else {
+			System.out.println("Atenção: Assento já reservado para este voo.");
+		}
 	}
 
 	public void cancelarReserva() {
 		if (this.assento != null) {
 			this.assento = null;
 			System.out.println("Reserva de assento cancelada com sucesso!");
-		} else {
+		} 
+		else {
 			System.out.println("Atenção: Não há assento reservado para este voo.");
 		}
 	}
@@ -58,10 +62,12 @@ public class Voo {
 	public void embarcar() {
 		if (this.status.equals("Confirmado")) {
 			this.status = "Em voo";
-		} else {
+		} 
+		else {
 			System.out.println("Atenção: Voo não está confirmado para embarque.");
-  		}
- 	}
+		}
+		
+	}
 
 	public void desembarcar() {
 		if (this.status.equals("Em voo")) {
@@ -69,20 +75,20 @@ public class Voo {
 		} 
 		else {
 			System.out.println("Atenção: Voo não está em voo para desembarque.");
- 		}
- 	}
+		}
+	}
 
 	public String getInformacoes() {
-	return "\nInformações do Voo:\n" +
-		"ID: " + id + "\n" +
-		"Data de saída: " + dataSaida.toString() + "\n" +
-		"Hora de saída: " + horaSaida + "\n" +
-		"Data de chegada: " + dataChegada + "\n" +
-		"Hora de chegada: " + horaChegada + "\n" +
-		"Origem: " + origem + "\n" +
-		"Destino: " + destino + "\n" +
-		"Companhia aérea: " + companhiaAerea + "\n" +
-		"Número do voo: " + numeroVoo + "\n" +
-		"Status: " + status + (assento != null ? "\nAssento: " + assento + " - R$" + valorAssento : "")
+		return "\nInformações do Voo:\n" +
+			"ID: " + id + "\n" +
+			"Data de saída: " + dataSaida.toString() + "\n" +
+			"Hora de saída: " + horaSaida + "\n" +
+			"Data de chegada: " + dataChegada + "\n" +
+			"Hora de chegada: " + horaChegada + "\n" +
+			"Origem: " + origem + "\n" +
+			"Destino: " + destino + "\n" +
+			"Companhia aérea: " + companhiaAerea + "\n" +
+			"Número do voo: " + numeroVoo + "\n" +
+			"Status: " + status + (assento != null ? "\nAssento: " + assento + " - R$" + valorAssento : "");
 	}
 }
