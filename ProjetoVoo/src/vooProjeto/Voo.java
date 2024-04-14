@@ -17,6 +17,7 @@ public class Voo {
 	private String assento; 
 	private double valorAssento;
 	private Aviao aviao;
+	private Passageiro passageiro;
 
 
 	public Voo(Data dataSaida, Data dataChegada) {
