@@ -15,8 +15,9 @@ public class Aviao {
 		
 	}
 	
-	public boolean ocupado(int lin, int col) {
-		if(assentos[lin][col]) {
+	public boolean disponivel() {
+		String assentoPassageiro[] = voo.getAssento().split("");
+		if(assentos[Integer.parseInt(assentoPassageiro[0])][Integer.parseInt(assentoPassageiro[1])] ) {
 			return true;
 		}
 		return false;
