@@ -1,3 +1,5 @@
+package vooProjeto;
+
 public class Voo {
 
   private int id;
