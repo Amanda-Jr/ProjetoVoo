@@ -4,15 +4,17 @@ public class Funcionario extends Pessoa {
 
     protected float salario;
     
-    public Funcionario(String nome, Data dataNascimento){
-    	super(nome, dataNascimento);
-    }   
+
+    public Funcionario() {
+    	
+    }
+  
     
     public Funcionario(String nome, Data dataNascimento, float salario) {
         super(nome, dataNascimento);
         this.salario = salario;
     }
-
+    
     public String getNome() {
         return nome;
     }
