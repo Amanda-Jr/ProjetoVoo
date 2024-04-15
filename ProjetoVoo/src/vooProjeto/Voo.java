@@ -15,10 +15,9 @@ public class Voo {
 	private String assento; 
 	private double valorAssento;
 	private Aviao aviao;
-	private Passageiro passageiro;
 
 
-	public Voo(Data dataSaida, Data dataChegada, Aviao aviao, Passageiro passageiro) {
+	public Voo(Data dataSaida, Data dataChegada, Aviao aviao) {
 		this.id = 12345;
 		this.dataSaida = dataSaida;
 		this.horaSaida =  "10:30";
@@ -32,7 +31,6 @@ public class Voo {
 		this.assento = null;
 		this.valorAssento = 450.00;
 		this.aviao = aviao;
-		this.passageiro = passageiro;
 	}
 
 	public void reservarAssento(String assento) {
