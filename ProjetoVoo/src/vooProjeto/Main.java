@@ -25,16 +25,18 @@ public class Main {
 		int ano = sc.nextInt();
 		Data dataNsc = new Data(dia, mes, ano);
 		
-		System.out.println("Cadastrado, " + nome);
+		System.out.println("Cadastrado(a), " + nome);
 		System.out.println("\nEscolha o assento que deseja: ");
 		aviao.exibirAssentos();
-		aviao.disponivel("01");
+		aviao.disponivel(sc.next());
 		aviao.exibirAssentos();
 		System.out.println("\nVamos despachar suas malas");
 		System.out.println("Quantas malas voce esta carregando? ");
 		int qntMalas = sc.nextInt();
 		p1 = new Passageiro(nome, dataNsc, china, qntMalas);
 		p1.despacharMala();
+		
+		china.valorTotal();
 		
 	}
 

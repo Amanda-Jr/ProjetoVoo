@@ -13,7 +13,8 @@ public class Voo {
 	private String numeroVoo ; 
 	private String status ;
 	private String assento; 
-	private double valorAssento;
+	private float valorAssento;
+	private float taxa;
 	private Aviao aviao;
 
 
@@ -29,7 +30,7 @@ public class Voo {
 		this.numeroVoo = "LA1234";
 		this.status = "Confirmado";
 		this.assento = null;
-		this.valorAssento = 450.00;
+		this.valorAssento = 450;
 		this.aviao = aviao;
 	}
 
@@ -76,6 +77,16 @@ public class Voo {
 			System.out.println("Atenção: Voo não está em voo para desembarque.");
 		}
 	}
+	
+	public void calcTaxa(float taxa) {
+		this.taxa = this.taxa + taxa;
+	}
+	
+	public void valorTotal() {
+		float total = valorAssento + taxa;
+		System.out.println("Valor total: " + total);
+	}
+	
 
 	public String getInformacoes() {
 		return "\nInformações do Voo:\n" +
@@ -88,6 +99,6 @@ public class Voo {
 			"Destino: " + destino + "\n" +
 			"Companhia aérea: " + companhiaAerea + "\n" +
 			"Número do voo: " + numeroVoo + "\n" +
-			"Status: " + status + (assento != null ? "\nAssento: " + assento + " - R$" + valorAssento : "");
+			"Status: " + status + (assento != null ? "\nAssento: " + assento + " - R$" + valorAssento : "" );
 	}
 }

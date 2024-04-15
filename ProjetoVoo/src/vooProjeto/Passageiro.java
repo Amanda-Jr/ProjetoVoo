@@ -20,11 +20,24 @@ public class Passageiro extends Pessoa {
 			System.out.printf("Digite o peso da mala %d ", i+1);
 			malas[i] = sc.nextFloat();
 			if(s1.verificarPesoMalas(malas[i])) {
-				System.out.println("Mala despachada. Peso da Mala: " + malas[i]);
+				System.out.println("Mala despachada. Peso da Mala: " + malas[i] + "kg");
 			}
 			else {
 				float taxa = (malas[i] - 25) * 50;
 	        		System.out.println("Mala barrada! Peso limite excedido (25Kg). Peso da Mala: " + malas[i] + "Kg. Distribua o peso ou pague uma taxa de " + taxa + "R$");
+	        		System.out.println("[1] Pagar taxa \n[2] Distribuir peso");
+	        		int escolha = sc.nextInt();	        		
+	        		switch (escolha) {
+	        			case 1:
+	        				passagem.calcTaxa(taxa);
+	        				System.out.println("Taxa adicionada ao valor total");
+	        				break;
+	        			case 2:
+	        				
+	        				break;
+	        			default: 
+	        				System.out.println("Opcao invalida");
+	        		}
 			}
 		}
 	}
