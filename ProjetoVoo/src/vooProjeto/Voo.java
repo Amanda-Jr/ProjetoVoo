@@ -1,7 +1,5 @@
 package vooProjeto;
 
-import java.time.LocalDate;
-
 public class Voo {
 
 	private int id;
@@ -20,7 +18,7 @@ public class Voo {
 	private Passageiro passageiro;
 
 
-	public Voo(Data dataSaida, Data dataChegada) {
+	public Voo(Data dataSaida, Data dataChegada, Aviao aviao, Passageiro passageiro) {
 		this.id = 12345;
 		this.dataSaida = dataSaida;
 		this.horaSaida =  "10:30";
@@ -33,6 +31,8 @@ public class Voo {
 		this.status = "Confirmado";
 		this.assento = null;
 		this.valorAssento = 450.00;
+		this.aviao = aviao;
+		this.passageiro = passageiro;
 	}
 
 	public void reservarAssento(String assento) {
@@ -84,7 +84,7 @@ public class Voo {
 			"ID: " + id + "\n" +
 			"Data de saída: " + dataSaida.toString() + "\n" +
 			"Hora de saída: " + horaSaida + "\n" +
-			"Data de chegada: " + dataChegada + "\n" +
+			"Data de chegada: " + dataChegada.toString() + "\n" +
 			"Hora de chegada: " + horaChegada + "\n" +
 			"Origem: " + origem + "\n" +
 			"Destino: " + destino + "\n" +
