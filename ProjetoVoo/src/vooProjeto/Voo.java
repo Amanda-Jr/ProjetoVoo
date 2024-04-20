@@ -21,21 +21,6 @@ public class Voo {
 	public Voo() {
 		
 	}
-	public Voo(Data dataSaida, Data dataChegada, Aviao aviao) {
-		this.id = 12345;
-		this.dataSaida = dataSaida;
-		this.horaSaida =  "10:30";
-		this.dataChegada = dataChegada;
-		this.horaChegada =  "13:00";
-		this.origem = "Recife (REC)";
-		this.destino = "São Paulo (GRU)";
-		this.companhiaAerea = "LATAM";
-		this.numeroVoo = "LA1234";
-		this.status = "Confirmado";
-		this.assento = null;
-		this.valorAssento = 450;
-		this.aviao = aviao;
-	}
 
 	public void reservarAssento(String assento) {
 		if (this.assento == null) {
