@@ -4,7 +4,6 @@ public class Aviao {
 	private boolean assentos[][];
 	private Passageiro passageiro;
 	private Comissario comissario;
-	private Piloto piloto;
 	private Seguranca seguranca;
 	private Voo voo;
 	
@@ -14,12 +13,11 @@ public class Aviao {
 		inicializarAssentos();
 	}
 	
-	public Aviao(Passageiro passageiro, Comissario comissario, Piloto piloto, Seguranca seguranca, Voo voo) {
+	public Aviao(Passageiro passageiro, Comissario comissario, Seguranca seguranca, Voo voo) {
 		this.assentos = new boolean[6][6];
 		inicializarAssentos();
 		this.passageiro = passageiro;
 		this.comissario = comissario;
-		this.piloto = piloto;
 		this.seguranca = seguranca;
 		this.voo = voo;
 		
@@ -88,14 +86,6 @@ public class Aviao {
 
 	public void setComissario(Comissario comissario) {
 		this.comissario = comissario;
-	}
-
-	public Piloto getPiloto() {
-		return piloto;
-	}
-
-	public void setPiloto(Piloto piloto) {
-		this.piloto = piloto;
 	}
 
 	public Seguranca getSeguranca() {
