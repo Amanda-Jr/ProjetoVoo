@@ -14,10 +14,13 @@ public class Voo {
 	private String status ;
 	private String assento; 
 	private float valorAssento;
+	private String servicoDeBordo;
 	private float taxa;
 	private Aviao aviao;
 
-
+	public Voo() {
+		
+	}
 	public Voo(Data dataSaida, Data dataChegada, Aviao aviao) {
 		this.id = 12345;
 		this.dataSaida = dataSaida;
@@ -87,8 +90,8 @@ public class Voo {
 		System.out.println("Valor total: " + total);
 	}
 	
-
-	public String getInformacoes() {
+	@Override
+	public String toString() {
 		return "\nInformações do Voo:\n" +
 			"ID: " + id + "\n" +
 			"Data de saída: " + dataSaida.toString() + "\n" +
@@ -98,7 +101,102 @@ public class Voo {
 			"Origem: " + origem + "\n" +
 			"Destino: " + destino + "\n" +
 			"Companhia aérea: " + companhiaAerea + "\n" +
-			"Número do voo: " + numeroVoo + "\n" +
-			"Status: " + status + (assento != null ? "\nAssento: " + assento + " - R$" + valorAssento : "" );
+			"Número do voo: " + numeroVoo + "\n";
+			
 	}
+	
+	//"Status: " + status + (assento != null ? "\nAssento: " + assento + " - R$" + valorAssento : "" );
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Data getDataSaida() {
+		return dataSaida;
+	}
+	public void setDataSaida(Data dataSaida) {
+		this.dataSaida = dataSaida;
+	}
+	public String getHoraSaida() {
+		return horaSaida;
+	}
+	public void setHoraSaida(String horaSaida) {
+		this.horaSaida = horaSaida;
+	}
+	public Data getDataChegada() {
+		return dataChegada;
+	}
+	public void setDataChegada(Data dataChegada) {
+		this.dataChegada = dataChegada;
+	}
+	public String getHoraChegada() {
+		return horaChegada;
+	}
+	public void setHoraChegada(String horaChegada) {
+		this.horaChegada = horaChegada;
+	}
+	public String getOrigem() {
+		return origem;
+	}
+	public void setOrigem(String origem) {
+		this.origem = origem;
+	}
+	public String getDestino() {
+		return destino;
+	}
+	public void setDestino(String destino) {
+		this.destino = destino;
+	}
+	public String getCompanhiaAerea() {
+		return companhiaAerea;
+	}
+	public void setCompanhiaAerea(String companhiaAerea) {
+		this.companhiaAerea = companhiaAerea;
+	}
+	public String getNumeroVoo() {
+		return numeroVoo;
+	}
+	public void setNumeroVoo(String numeroVoo) {
+		this.numeroVoo = numeroVoo;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getAssento() {
+		return assento;
+	}
+	public void setAssento(String assento) {
+		this.assento = assento;
+	}
+	public float getValorAssento() {
+		return valorAssento;
+	}
+	public void setValorAssento(float valorAssento) {
+		this.valorAssento = valorAssento;
+	}
+	public float getTaxa() {
+		return taxa;
+	}
+	public void setTaxa(float taxa) {
+		this.taxa = taxa;
+	}
+	public Aviao getAviao() {
+		return aviao;
+	}
+	public void setAviao(Aviao aviao) {
+		this.aviao = aviao;
+	}
+	public String getServicoDeBordo() {
+		return servicoDeBordo;
+	}
+	public void setServicoDeBordo(String servicoDeBordo) {
+		this.servicoDeBordo = servicoDeBordo;
+	}
+	
+	
 }
