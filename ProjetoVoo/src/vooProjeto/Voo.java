@@ -16,17 +16,19 @@ public class Voo {
 	private float valorAssento;
 	private String servicoDeBordo;
 	private float taxa;
+	private float taxaServico;
 	private Aviao aviao;
 
 	public Voo() {
-		
+		taxaServico = 0;
 	}
+
 
 	public void reservarAssento(String assento) {
 		if (this.assento == null) {
 			if (aviao.disponivel(assento)) {
 				this.assento = assento;
-				System.out.println("Assento reservado com sucesso! Valor: R$" + valorAssento);
+				System.out.println("Assento reservado com sucesso!");
 			} 
 			else {
 				System.out.println("Assento indisponível para reserva.");			
@@ -37,10 +39,11 @@ public class Voo {
 		}
 	}
 
-	public void cancelarReserva() {
+	public void cancelarReserva(String assento) {
 		if (this.assento != null) {
 			this.assento = null;
 			System.out.println("Reserva de assento cancelada com sucesso!");
+			aviao.cancelarAssento(assento);
 		} 
 		else {
 			System.out.println("Atenção: Não há assento reservado para este voo.");
@@ -50,6 +53,7 @@ public class Voo {
 	public void embarcar() {
 		if (this.status.equals("Confirmado")) {
 			this.status = "Em voo";
+			System.out.println("Embarque confimado");
 		} 
 		else {
 			System.out.println("Atenção: Voo não está confirmado para embarque.");
@@ -59,7 +63,8 @@ public class Voo {
 
 	public void desembarcar() {
 		if (this.status.equals("Em voo")) {
-			this.status = "Concluído";
+			this.status = "Concluido";
+			System.out.println("Desembarque concluido");
 		} 
 		else {
 			System.out.println("Atenção: Voo não está em voo para desembarque.");
@@ -71,7 +76,7 @@ public class Voo {
 	}
 	
 	public void valorTotal() {
-		float total = valorAssento + taxa;
+		float total = valorAssento + taxa + taxaServico;
 		System.out.println("Valor total: " + total);
 	}
 	
@@ -86,11 +91,10 @@ public class Voo {
 			"Origem: " + origem + "\n" +
 			"Destino: " + destino + "\n" +
 			"Companhia aérea: " + companhiaAerea + "\n" +
-			"Número do voo: " + numeroVoo + "\n";
+			"Número do voo: " + numeroVoo + "\n" +
+			"Valor do voo: " + valorAssento + "\n";
 			
 	}
-	
-	//"Status: " + status + (assento != null ? "\nAssento: " + assento + " - R$" + valorAssento : "" );
 	
 	public int getId() {
 		return id;
@@ -181,6 +185,16 @@ public class Voo {
 	}
 	public void setServicoDeBordo(String servicoDeBordo) {
 		this.servicoDeBordo = servicoDeBordo;
+	}
+
+
+	public float getTaxaServico() {
+		return taxaServico;
+	}
+
+
+	public void setTaxaServico(float taxaServico) {
+		this.taxaServico = this.taxaServico + taxaServico;
 	}
 	
 	

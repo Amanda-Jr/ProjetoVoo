@@ -60,49 +60,49 @@ public class Menu {
 		String numVoo = sc.next();
 		
 		switch (numVoo) {
-		case "1": {
-			System.out.println("Servico de Bordo: ");
-			System.out.println("[a] Simples\n[b] Completo");
-			String servico = sc.next();
-			if(servico.equalsIgnoreCase("a")) {
-				saoPaulo.setServicoDeBordo("Simples");
-			}else if(servico.equalsIgnoreCase("b")) {
-				saoPaulo.setServicoDeBordo("Completo");
+			case "1": {
+				System.out.println("Servico de Bordo: ");
+				System.out.println("[a] Simples\n[b] Completo");
+				String servico = sc.next();
+				if(servico.equalsIgnoreCase("a")) {
+					saoPaulo.setServicoDeBordo("Simples");
+				}else if(servico.equalsIgnoreCase("b")) {
+					saoPaulo.setServicoDeBordo("Completo");
+				}
+				return saoPaulo;
 			}
-			return saoPaulo;
-		}
-		case "2": {
-			System.out.println("Servico de Bordo: ");
-			System.out.println("[a] Simples\n[b] Completo");
-			String servico = sc.next();
-			if(servico.equalsIgnoreCase("a")) {
-				rioDeJaneiro.setServicoDeBordo("Simples");
-			}else if(servico.equalsIgnoreCase("b")) {
-				rioDeJaneiro.setServicoDeBordo("Completo");
+			case "2": {
+				System.out.println("Servico de Bordo: ");
+				System.out.println("[a] Simples\n[b] Completo");
+				String servico = sc.next();
+				if(servico.equalsIgnoreCase("a")) {
+					rioDeJaneiro.setServicoDeBordo("Simples");
+				}else if(servico.equalsIgnoreCase("b")) {
+					rioDeJaneiro.setServicoDeBordo("Completo");
+				}
+				return rioDeJaneiro;
 			}
-			return rioDeJaneiro;
-		}
-		case "3": {
-			System.out.println("Servico de Bordo: ");
-			System.out.println("[a] Simples\n[b] Completo");
-			String servico = sc.next();
-			if(servico.equalsIgnoreCase("a")) {
-				gramado.setServicoDeBordo("Simples");
-			}else if(servico.equalsIgnoreCase("b")) {
-				gramado.setServicoDeBordo("Completo");
+			case "3": {
+				System.out.println("Servico de Bordo: ");
+				System.out.println("[a] Simples\n[b] Completo");
+				String servico = sc.next();
+				if(servico.equalsIgnoreCase("a")) {
+					gramado.setServicoDeBordo("Simples");
+				}else if(servico.equalsIgnoreCase("b")) {
+					gramado.setServicoDeBordo("Completo");
+				}
+				return gramado;
 			}
-			return gramado;
-		}
-		default:
-			System.out.println("Voo invalido!");
-			return null;
-		}
+			default:
+				System.out.println("Voo invalido!");
+				return null;
+			}
 	}
 	
 	public Passageiro cadastroPassageiro(Aviao aviao) {
 		Scanner sc = new Scanner(System.in);
 		//Cadastro do Passageiro
-		System.out.println("Bem-vindo ao atendimento do Aeroporto Nacional");
+		System.out.println("Bem-vindo(a) ao atendimento do Aeroporto Nacional Brasilia Sky");
 		System.out.println("Vamos realizar o seu cadastro...");
 		System.out.println("Precisamos primeiro do seu nome: ");
 		String nome = sc.nextLine();
@@ -125,13 +125,24 @@ public class Menu {
 		}
 		
 		
-		System.out.println("\nEscolha o assento que deseja: ");
-		aviao.exibirAssentos();
-		aviao.disponivel(sc.next());
-		aviao.exibirAssentos();
+		int confAssento;
+		do {
+			System.out.println("\nEscolha o assento que deseja: ");
+			aviao.exibirAssentos();
+			String assento = sc.next();
+			destino.reservarAssento(assento);
+			aviao.exibirAssentos();
+			System.out.println("Confirmar assento? [1]sim [0]nao");
+			confAssento = sc.nextInt();
+			if(confAssento == 0) {
+				destino.cancelarReserva(assento);
+			}
+		}while(confAssento == 0);
+		
 		System.out.println("\nVamos despachar suas malas");
 		System.out.println("Quantas malas voce esta carregando? ");
 		int qntMalas = sc.nextInt();
+		destino.setStatus("Confirmado");
 		
 		return new Passageiro(nome, dataNsc, destino, qntMalas);
 	}

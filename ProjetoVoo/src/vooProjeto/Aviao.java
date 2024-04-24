@@ -40,8 +40,13 @@ public class Aviao {
 		return false;
 	}
 	
-	public void decolar(){
-		
+	public void cancelarAssento(String assento) {
+		String assentoPassageiro[] = assento.split("");
+		if(!assentos[Integer.parseInt(assentoPassageiro[0])][Integer.parseInt(assentoPassageiro[1])-1]) {
+			assentos[Integer.parseInt(assentoPassageiro[0])][Integer.parseInt(assentoPassageiro[1])-1] = true;
+		}else {
+			System.out.println("Este assento nao pode ser cancelado");
+		}
 	}
 	
 	public void exibirAssentos() {
@@ -60,9 +65,6 @@ public class Aviao {
 		}
 	}
 	
-	public void checarPassageiro() {
-		
-	}
 
 	public boolean[][] getAssentos() {
 		return assentos;
@@ -103,6 +105,7 @@ public class Aviao {
 	public void setVoo(Voo voo) {
 		this.voo = voo;
 	}
+	
 	
 	
 	

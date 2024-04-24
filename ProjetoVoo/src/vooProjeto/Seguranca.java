@@ -2,26 +2,25 @@ package vooProjeto;
 
 public class Seguranca extends Funcionario {
 
-    private float pesoMaximoMalas = 25;
-    static Data dataNsc = new Data(15, 02, 1990);
+	 private float pesoMaximoMalas = 25;
 
-    public Seguranca() {
-        super("Marcelo", dataNsc, 12000);
-    }
+	 public Seguranca(String nome, Data dataNascimento, float salario) {
+		 super(nome, dataNascimento, salario);
+	 }
 
-    public float getPesoMaximoMalas() {
-        return pesoMaximoMalas;
-    }
+	 public float getPesoMaximoMalas() {
+	     return pesoMaximoMalas;
+	 }
 
-    public void setPesoMaximoMalas(float pesoMaximoMalaS) {
-        this.pesoMaximoMalas = pesoMaximoMalaS;
-    }
+	 public void setPesoMaximoMalas(float pesoMaximoMalaS) {
+	     this.pesoMaximoMalas = pesoMaximoMalaS;
+	 }
 
-    public boolean verificarPesoMalas(float pesoMala) {
-        if(pesoMala > pesoMaximoMalas) {
-        	return false;
-        }else {
-        	return true;
-        }
-    }
+	 public boolean verificarPesoMalas(float pesoMala) {
+	     if(pesoMala > pesoMaximoMalas) {
+	    	 return false;
+	     }else {
+	    	 return true;
+	     }
+	 }
 }

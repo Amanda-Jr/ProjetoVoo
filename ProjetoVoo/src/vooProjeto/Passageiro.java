@@ -2,7 +2,7 @@ package vooProjeto;
 import java.util.Scanner;
 
 public class Passageiro extends Pessoa {
-	private Seguranca s1 = new Seguranca();
+	private Seguranca s1;
 	private Voo passagem;
 	private int numMala;
 	private float malas[];
@@ -56,6 +56,10 @@ public class Passageiro extends Pessoa {
 
 	public void setNumMala(int numMala) {
 		this.numMala = numMala;
+	}
+	
+	public void setSeguranca(Seguranca s1) {
+		this.s1 = s1;
 	}
 
 	
