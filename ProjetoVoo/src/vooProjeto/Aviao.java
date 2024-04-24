@@ -2,9 +2,6 @@ package vooProjeto;
 
 public class Aviao {
 	private boolean assentos[][];
-	private Passageiro passageiro;
-	private Comissario comissario;
-	private Seguranca seguranca;
 	private Voo voo;
 	
 	
@@ -13,12 +10,9 @@ public class Aviao {
 		inicializarAssentos();
 	}
 	
-	public Aviao(Passageiro passageiro, Comissario comissario, Seguranca seguranca, Voo voo) {
+	public Aviao(Voo voo) {
 		this.assentos = new boolean[6][6];
 		inicializarAssentos();
-		this.passageiro = passageiro;
-		this.comissario = comissario;
-		this.seguranca = seguranca;
 		this.voo = voo;
 		
 	}
@@ -74,29 +68,6 @@ public class Aviao {
 		this.assentos = assentos;
 	}
 
-	public Passageiro getPassageiro() {
-		return passageiro;
-	}
-
-	public void setPassageiro(Passageiro passageiro) {
-		this.passageiro = passageiro;
-	}
-
-	public Comissario getComissario() {
-		return comissario;
-	}
-
-	public void setComissario(Comissario comissario) {
-		this.comissario = comissario;
-	}
-
-	public Seguranca getSeguranca() {
-		return seguranca;
-	}
-
-	public void setSeguranca(Seguranca seguranca) {
-		this.seguranca = seguranca;
-	}
 
 	public Voo getVoo() {
 		return voo;
