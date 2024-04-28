@@ -4,23 +4,24 @@ public class Voo {
 
 	private int id;
 	private Data dataSaida ;
-	private String horaSaida ; 
 	private Data dataChegada ;
+	private String horaSaida ; 
 	private String horaChegada ; 
 	private String origem ; 
 	private String destino ;
 	private String companhiaAerea ;
 	private String numeroVoo ; 
-	private String status ;
 	private String assento; 
-	private float valorAssento;
 	private String servicoDeBordo;
-	private float taxa;
+	private float valorAssento;
+	private float taxaMala;
 	private float taxaServico;
+	private float pesoMaximoMalas;
 	private Aviao aviao;
 
 	public Voo() {
 		taxaServico = 0;
+		pesoMaximoMalas = 25;
 	}
 
 
@@ -49,34 +50,21 @@ public class Voo {
 			System.out.println("Atenção: Não há assento reservado para este voo.");
 		}
 	}
-
-	public void embarcar() {
-		if (this.status.equals("Confirmado")) {
-			this.status = "Em voo";
-			System.out.println("Embarque confimado");
-		} 
-		else {
-			System.out.println("Atenção: Voo não está confirmado para embarque.");
-		}
-		
-	}
-
-	public void desembarcar() {
-		if (this.status.equals("Em voo")) {
-			this.status = "Concluido";
-			System.out.println("Desembarque concluido");
-		} 
-		else {
-			System.out.println("Atenção: Voo não está em voo para desembarque.");
-		}
-	}
 	
-	public void calcTaxa(float taxa) {
-		this.taxa = this.taxa + taxa;
+	 public boolean verificarPesoMalas(float pesoMala) {
+	     if(pesoMala > pesoMaximoMalas) {
+	    	 return false;
+	     }else {
+	    	 return true;
+	     }
+	 }
+	 
+	public void calcTaxa(float taxaMala) {
+		this.taxaMala = this.taxaMala + taxaMala;
 	}
 	
 	public void valorTotal() {
-		float total = valorAssento + taxa + taxaServico;
+		float total = valorAssento + taxaMala + taxaServico;
 		System.out.println("Valor total: " + total);
 	}
 	
@@ -144,18 +132,18 @@ public class Voo {
 	public void setCompanhiaAerea(String companhiaAerea) {
 		this.companhiaAerea = companhiaAerea;
 	}
+	
+	public void setPesoMaximoMalas(float pesoMaximoMalaS) {
+	     this.pesoMaximoMalas = pesoMaximoMalaS;
+	}
+	
 	public String getNumeroVoo() {
 		return numeroVoo;
 	}
 	public void setNumeroVoo(String numeroVoo) {
 		this.numeroVoo = numeroVoo;
 	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	
 	public String getAssento() {
 		return assento;
 	}
@@ -168,11 +156,11 @@ public class Voo {
 	public void setValorAssento(float valorAssento) {
 		this.valorAssento = valorAssento;
 	}
-	public float getTaxa() {
-		return taxa;
+	public float getTaxaMala() {
+		return taxaMala;
 	}
-	public void setTaxa(float taxa) {
-		this.taxa = taxa;
+	public void setTaxaMala(float taxaMala) {
+		this.taxaMala = taxaMala;
 	}
 	public Aviao getAviao() {
 		return aviao;
@@ -187,12 +175,9 @@ public class Voo {
 		this.servicoDeBordo = servicoDeBordo;
 	}
 
-
 	public float getTaxaServico() {
 		return taxaServico;
 	}
-
-
 	public void setTaxaServico(float taxaServico) {
 		this.taxaServico = this.taxaServico + taxaServico;
 	}

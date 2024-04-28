@@ -1,17 +1,16 @@
 package vooProjeto;
+
 import java.util.Scanner;
 
-public class Comissario extends Funcionario {
-
+public class ServicoBordo {
+	
 	private String estoque[][];
 	private Voo voo;
-
 	
-    public Comissario(String nome, Data dataNascimento, float salario) {
-        super(nome, dataNascimento, salario);
-        this.estoque = new String [6][3];
-    }
-
+	public ServicoBordo() {
+		this.estoque = new String [6][3];
+	}
+	
     public void inicializarEstoque() {
     	estoque[0] = new String [] {"Agua", "5", "10"};
     	estoque[1] = new String [] {"Cream Cracker", "12", "8"};
@@ -65,5 +64,4 @@ public class Comissario extends Funcionario {
     public void setVoo(Voo voo) {
     	this.voo = voo;
     }
-
 }

@@ -2,7 +2,6 @@ package vooProjeto;
 import java.util.Scanner;
 
 public class Passageiro extends Pessoa {
-	private Seguranca s1;
 	private Voo passagem;
 	private int numMala;
 	private float malas[];
@@ -19,7 +18,7 @@ public class Passageiro extends Pessoa {
 		for(int i=0; i<numMala; i++) {
 			System.out.printf("Digite o peso da mala %d ", i+1);
 			malas[i] = sc.nextFloat();
-			if(s1.verificarPesoMalas(malas[i])) {
+			if(passagem.verificarPesoMalas(malas[i])) {
 				System.out.println("Mala despachada. Peso da Mala: " + malas[i] + "kg");
 			}
 			else {
@@ -57,10 +56,15 @@ public class Passageiro extends Pessoa {
 	public void setNumMala(int numMala) {
 		this.numMala = numMala;
 	}
-	
-	public void setSeguranca(Seguranca s1) {
-		this.s1 = s1;
+
+	public float[] getMalas() {
+		return malas;
 	}
 
+	public void setMalas(float[] malas) {
+		this.malas = malas;
+	}
+	
+	
 	
 }

@@ -139,10 +139,9 @@ public class Menu {
 			}
 		}while(confAssento == 0);
 		
-		System.out.println("\nVamos despachar suas malas");
+		System.out.println("\nSevico para despache de malas");
 		System.out.println("Quantas malas voce esta carregando? ");
 		int qntMalas = sc.nextInt();
-		destino.setStatus("Confirmado");
 		
 		return new Passageiro(nome, dataNsc, destino, qntMalas);
 	}

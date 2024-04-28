@@ -2,7 +2,6 @@ package vooProjeto;
 
 public class Aviao {
 	private boolean assentos[][];
-	private Voo voo;
 	
 	
 	public Aviao() {
@@ -13,7 +12,7 @@ public class Aviao {
 	public Aviao(Voo voo) {
 		this.assentos = new boolean[6][6];
 		inicializarAssentos();
-		this.voo = voo;
+		//this.voo = voo;
 		
 	}
 	
@@ -68,15 +67,6 @@ public class Aviao {
 		this.assentos = assentos;
 	}
 
-
-	public Voo getVoo() {
-		return voo;
-	}
-
-	public void setVoo(Voo voo) {
-		this.voo = voo;
-	}
-	
 	
 	
 	
