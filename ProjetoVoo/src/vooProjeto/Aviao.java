@@ -12,7 +12,6 @@ public class Aviao {
 	public Aviao(Voo voo) {
 		this.assentos = new boolean[6][6];
 		inicializarAssentos();
-		//this.voo = voo;
 		
 	}
 	
@@ -67,7 +66,6 @@ public class Aviao {
 		this.assentos = assentos;
 	}
 
-	
-	
+		
 	
 }
