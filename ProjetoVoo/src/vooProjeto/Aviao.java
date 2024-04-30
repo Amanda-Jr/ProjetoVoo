@@ -9,11 +9,6 @@ public class Aviao {
 		inicializarAssentos();
 	}
 	
-	public Aviao(Voo voo) {
-		this.assentos = new boolean[6][6];
-		inicializarAssentos();
-		
-	}
 	
 	private void inicializarAssentos() {
 		for(int i=0; i<6; i++) {
